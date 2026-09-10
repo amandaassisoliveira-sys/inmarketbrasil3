@@ -29,7 +29,7 @@ class Settings:
     # Envio de email (Resend)
     RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
     RESEND_FROM_EMAIL = os.getenv("RESEND_FROM_EMAIL", "onboarding@resend.dev")
-    SITE_URL = os.getenv("SITE_URL", "http://localhost:8000")
+    SITE_URL = (os.getenv("SITE_URL") or "http://localhost:8000").strip().rstrip("/")
 
     # Banco de dados
     DATABASE_URL = os.getenv("DATABASE_URL") or "sqlite:///./local.db"
